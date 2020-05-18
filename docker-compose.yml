@@ -1,0 +1,14 @@
+version: "2"
+services:
+  angular-app:
+    container_name: angular-app
+     
+    working_dir: /app
+    command: ng test
+    volumes: 
+      - ./src:/app/src
+    ports: 
+      - 4200:4200
+      - 49153:49153
+    build: . 
+    tty: true

@@ -1,0 +1,21 @@
+/* .nav {
+  display:flex;
+  flex-flow:row nowrap;
+  list-style:none;
+  justify-content:space-between;
+  align-items: stretch;
+} */
+ul {
+  display:flex;
+  
+}
+li {
+
+  margin: 0 30px;
+}
+
+a{
+  text-transform: uppercase;
+  word-spacing: 5px;  
+  background-color:white;
+}

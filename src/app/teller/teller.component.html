@@ -1,0 +1,44 @@
+
+<div class="main">
+  
+  <section class="display">
+    <!-- Display: Customer information except for when inquiring about transaction -->
+    <h3>CUSTOMER DEMOGRAPHIC</h3>
+    <p> Current Balance: <span class="highlight">   {{ myAccount.balance | currency}}  </span>  </p>
+
+
+    <p>Customer Name: <span class="highlight">{{myAccount.fname}} {{myAccount.lname}} </span> </p>
+    <p>Age: <span class="highlight">{{myAccount.age}} </span> </p>
+    <p>Address: <span class="highlight"> {{ myAccount.address.street }}</span> 
+    </p>
+    <p>Phone Number: <span class="highlight"> (312) 135-4532</span></p>
+    <br><br>
+    <h6> {{date }} </h6>
+
+    <!-- Display: if inquiring about transactions -->
+    <!-- <h3>Last 3 Transactions</h3> -->
+
+  </section>
+  <aside class="options">
+    <section class="balance">
+      <!-- Display customer balance -->
+     
+    </section>
+    <!-- Add functionality to the buttons below -->
+    <ul class="options-list">
+  
+      <li class="options-item">
+        <input type='number' [(ngModel)]='value' placeholder="Enter $ to deposit/withdraw">
+      </li>
+      <li class="options-item">
+        <button  (click)="withdraw()" class='btn btn-info' >Withdraw for Customer</button>
+      </li>
+      <li class="options-item">
+        <button (click)="deposit()"  class="btn btn-info">Deposit for Customer</button>
+      </li>
+      <li class="options-item">
+        <button (click)='displayTransactions()'  class="btn btn-info">Customer Transaction History</button>
+      </li>
+    </ul>
+  </aside>
+</div>

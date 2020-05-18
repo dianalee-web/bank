@@ -1,0 +1,31 @@
+.balance {
+  display: block;
+}
+
+.main {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.display {
+
+  flex-basis: 40%;
+  background-color: #273043;
+  color: white;
+  padding: 10px;
+  text-align: left;
+}
+
+.options {
+  flex-basis: 40%;
+}
+
+.options-list {
+  list-style: none;
+}
+
+.options-item {
+
+}

@@ -1,0 +1,34 @@
+
+<div class="main">
+  <section class="display">
+    <h3> <span class="highlight"> Welcome, {{ myAccount.fname  }}</span></h3>
+    <h4> Current Balance:  {{ myAccount.balance | currency}} </h4>
+    <!-- Display Feedback information here -->
+    <!-- Current Balance: {{ myAccount.balance}} -->
+
+    
+    <h6>   {{date}}</h6>
+   
+  
+  </section>
+  <aside class="options">
+    <!-- Add functionality to the buttons below -->
+    <ul class="options-list">
+      <li>
+        <input type="number" placeholder="Enter $ Amount to Deposit or Withdraw" [(ngModel)]="userInputValue">
+      </li>
+      <li class="options-item">
+        <button class="btn btn-info" (click)='withdraw()'>Widthdrawal</button>
+      </li>
+      <li class="options-item">
+        <button class="btn btn-info" (click)='deposit()' >Deposit</button>
+      </li>
+      <li class="options-item">
+        <button  class="btn btn-info"(click)='getBalance()' >Balance Inquiry</button>
+      </li>
+      <li class="options-item">
+        <button class="btn btn-info" (click)='displayTransactions()'>Transactions History</button>
+      </li>
+    </ul>
+  </aside>
+</div>

@@ -1,0 +1,27 @@
+
+.main {
+  display: flex;
+  justify-content: center;
+  flex-flow: row nowrap;
+  padding: 2rem;
+}
+
+
+.display {
+  flex-basis: 40%;
+  background-color: #273043;
+  color: white;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.options {
+  flex-basis: 40%;
+}
+
+.options-list {
+  list-style: none;
+}
+
+
