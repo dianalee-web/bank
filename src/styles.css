@@ -1,18 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-    padding: 1rem 3rem;
-    background: #eff6ee;
-
+  padding: 1rem 3rem;
 }
 
-button, input {
-    width:400px;
-    margin: 10px;
-
-  }
-  input {
-      padding: 10px;
-  }
+button,
+input {
+  width: 400px;
+  margin: 10px;
+}
+input {
+  padding: 10px;
+}
 /* button {
     padding: 10px 25px;
     width:300px;
@@ -20,13 +18,12 @@ button, input {
     width: 100%;
 } */
 
- 
 span {
-    color: #7ebdc2;
-    text-transform: uppercase;
-    font-weight: bolder;
+  color: #7ebdc2;
+  text-transform: uppercase;
+  font-weight: bolder;
 }
 
 .display {
-    padding: 20px;
+  padding: 20px;
 }

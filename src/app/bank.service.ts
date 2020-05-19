@@ -1,44 +1,46 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class BankService {
   userInputValue: number;
-  constructor() { }
+  constructor() {}
   account: any = {
-    fname: 'Jane',
-    lname: 'Robinson',
+    fname: "Jane",
+    lname: "Robinson",
     age: 18,
     address: {
-      street: '1234 street st',
-      city: 'city',
-      state: 'state',
+      street: "1234 street st",
+      city: "city",
+      state: "state",
       zip: 12345,
-      country: 'canada'
+      country: "canada",
     },
     balance: 200.01,
-    currency: 'usd',
+    currency: "usd",
     transactions: [
       {
-        date: '01-01-01',
-        type: 'withdrawal',
-        amount: 200.00,
-        currency: 'usd'
+        date: "01-01-01",
+        type: "withdrawal",
+        amount: 200.0,
+        currency: "usd",
       },
       {
-        date: '02-02-02',
-        type: 'deposit',
-        amount: 100.00,
-        currency: 'usd'
+        date: "02-02-02",
+        type: "deposit",
+        amount: 100.0,
+        currency: "usd",
       },
       {
-        date: '03-03-03',
-        type: 'withdrawal',
-        amount: 2.00,
-        currency: 'usd'
-      }
-    ]
+        date: "03-03-03",
+        type: "withdrawal",
+        amount: 2.0,
+        currency: "usd",
+      },
+    ],
   };
-
+  withdrawAmount() {
+    alert("hello");
+  }
 }

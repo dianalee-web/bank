@@ -1,9 +1,11 @@
 .navbar {
-    display:flex;
-    flex-direction: column;
-    height: 25vh;
-    background: #BA1200;
+  display: flex;
+  flex-direction: column;
+  height: 25vh;
+  background: #ba1200;
+  color: white;
 
-   justify-content: space-around;
+  justify-content: space-around;
 }
-router-outlet {}
+router-outlet {
+}
