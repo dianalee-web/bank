@@ -7,35 +7,35 @@ export class BankService {
   userInputValue: number;
 
   account: any = {
-    fname: "Jane",
-    lname: "Robinson",
-    age: 18,
+    fname: "Elias",
+    lname: "Telahun",
+    age: 8,
     address: {
       street: "1234 street st",
-      city: "city",
-      state: "state",
-      zip: 12345,
-      country: "canada",
+      city: "San Diego",
+      state: "CA",
+      zip: 92108,
+      country: "USA",
     },
     balance: 200.01,
     currency: "usd",
     transactions: [
       {
-        date: "01-01-01",
+        date: new Date("5-01-2020"),
         type: "withdrawal",
         amount: 200.0,
         currency: "usd",
       },
       {
-        date: "02-02-02",
+        date: new Date("02-02-2020"),
         type: "deposit",
         amount: 100.0,
         currency: "usd",
       },
       {
-        date: "03-03-03",
+        date: new Date("03-03-2019"),
         type: "withdrawal",
-        amount: 2.0,
+        amount: 23.0,
         currency: "usd",
       },
     ],

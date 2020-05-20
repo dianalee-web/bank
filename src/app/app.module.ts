@@ -9,6 +9,7 @@ import { TellerComponent } from "./teller/teller.component";
 import { router } from "./app.router";
 import { NavComponent } from "./nav/nav.component";
 import { ContactComponent } from "./contact/contact.component";
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { ContactComponent } from "./contact/contact.component";
     TellerComponent,
     NavComponent,
     ContactComponent,
+    FooterComponent,
   ],
   imports: [BrowserModule, router, FormsModule],
   providers: [],

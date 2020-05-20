@@ -28,3 +28,7 @@
 .options-list {
   list-style: none;
 }
+
+button {
+  background: #37beb0;
+}

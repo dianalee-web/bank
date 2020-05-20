@@ -10,7 +10,6 @@
 }
 
 .display {
-
   flex-basis: 40%;
   background-color: #273043;
   color: white;
@@ -27,5 +26,15 @@
 }
 
 .options-item {
+}
 
+#balance {
+  text-align: center;
+}
+.accent {
+  color: green;
+}
+
+button {
+  background-color: #37beb0;
 }

@@ -1,6 +1,6 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-// import { AppComponent } from "./app.component";
+import { AppComponent } from "./app.component";
 import { AtmComponent } from './atm/atm.component';
 import { TellerComponent } from './teller/teller.component';
 import { ContactComponent } from './contact/contact.component';

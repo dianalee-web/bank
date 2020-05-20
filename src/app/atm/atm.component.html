@@ -1,13 +1,19 @@
 <div class="main">
   <section class="display">
     <h3>
-      <span class="highlight"> Welcome, {{ myAccount.fname }}</span>
+      <span class="highlight"> Welcome, {{ myAccount.fname | uppercase }}</span>
     </h3>
     <div>
       {{ display }}
     </div>
-
-    <h6>{{ date }}</h6>
+    <div *ngIf="transactionCompleted">
+      <h2>Recent Transactions</h2>
+      <p *ngFor="let transaction of myAccount.transactions | slice: 0:3">
+        {{ transaction.date }}
+        {{ transaction.type | uppercase }}
+        {{ transaction.amount | currency }}
+      </p>
+    </div>
   </section>
   <aside class="options">
     <!-- Add functionality to the buttons below -->
@@ -21,7 +27,7 @@
       </li>
 
       <li class="options-item">
-        <button class="btn btn-info" (click)="withdraw()">Widthdrawal</button>
+        <button class="btn btn-info" (click)="withdraw()">Withdraw</button>
       </li>
       <li class="options-item">
         <button class="btn btn-info" (click)="deposit()">Deposit</button>

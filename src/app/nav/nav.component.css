@@ -6,16 +6,21 @@
   align-items: stretch;
 } */
 ul {
-  display:flex;
-  
+  display: flex;
 }
 li {
-
   margin: 0 30px;
 }
 
-a{
+a {
   text-transform: uppercase;
-  word-spacing: 5px;  
-  background-color:white;
+  word-spacing: 5px;
+  letter-spacing: 4px;
+  color: white;
+}
+.navbar-brand {
+  color: white;
+}
+nav {
+  background-color: #0c6170;
 }

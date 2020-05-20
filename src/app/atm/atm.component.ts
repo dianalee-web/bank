@@ -11,35 +11,47 @@ export class AtmComponent {
   userInputValue: number;
   display = "";
   myAccount = this.bankService.account;
-
+  transactionCompleted: boolean;
   constructor(public bankService: BankService) {}
   withdraw() {
-    this.myAccount.balance -= this.userInputValue;
-    this.myAccount.transactions.unshift({
-      date: new Date(),
-      type: "withdrawal",
-      amount: this.value,
-      currency: "usd",
-    });
-    this.userInputValue = "";
-    this.display = `WTIHDRAW SUCCESS! New Balance: $ ${this.myAccount.balance}`;
+    this.transactionCompleted = false;
+
+    if (this.userInputValue > this.myAccount.balance) {
+      alert("INSUFFICIENT FUNDS. Please re-enter $ amount.");
+      this.display = "";
+    } else {
+      this.myAccount.balance -= this.userInputValue;
+      this.myAccount.transactions.unshift({
+        date: new Date(),
+        type: "withdrawal",
+        amount: this.userInputValue,
+        currency: "usd",
+      });
+      this.userInputValue = "";
+      this.display = `WTIHDRAW SUCCESS!`;
+    }
   }
   deposit() {
+    this.transactionCompleted = false;
     this.myAccount.balance += this.userInputValue;
     this.myAccount.transactions.unshift({
       date: new Date(),
       type: "deposit",
-      amount: this.value,
+      amount: this.userInputValue,
       currency: "usd",
     });
     this.userInputValue = "";
-    this.display = `DEPOSIT SUCCESS! New Balance: $ ${this.myAccount.balance}`;
+    this.display = `Deposit SUCCESS! `;
 
     this.userInputValue = "";
   }
   getBalance() {
-    this.display = `CURRENT BALANCE: $ ${this.myAccount.balance}`;
+    this.transactionCompleted = false;
+    this.display = `Current Balance: $ ${this.myAccount.balance}`;
     this.userInputValue = "";
   }
-  displayTransactions() {}
+  displayTransactions() {
+    this.display = "";
+    this.transactionCompleted = true;
+  }
 }

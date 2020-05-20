@@ -18,6 +18,6 @@ export class ContactComponent implements OnInit {
   ngOnInit() {}
 
   onSubmit() {
-    alert(this.name);
+    alert(this.name, this.email, this.phoneNumber, this.message);
   }
 }

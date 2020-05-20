@@ -1,43 +1,55 @@
 <div class="main">
   <section class="display">
-    <!-- Display: Customer information except for when inquiring about transaction -->
+    <h3>
+      Name: <span> {{ myAccount.fname }} {{ myAccount.lname }} </span>
+    </h3>
 
-    <h3>CUSTOMER DEMOGRAPHIC</h3>
-
-    <p>
-      Customer Name:
-      <span class="highlight"
-        >{{ myAccount.fname }} {{ myAccount.lname }}
-      </span>
-    </p>
-
-    <p *ngFor="let transaction of myAccount.transactions">
-      {{ transaction.date }} {{ transaction.type | uppercase }}
-      {{ transaction.amount | currency }}
-    </p>
-
-    <!-- <div>
+    <h4>Phone Number: <span> (619) 990-1357 </span></h4>
+    <div>
+      <p>{{ display }}</p>
+    </div>
+    <div *ngIf="homescreen == true">
+      <!-- Display: Customer information except for when inquiring about transaction -->
+      <!-- <h4>
+        Name: <span> {{ myAccount.fname }} {{ myAccount.lname }} </span>
+      </h4> -->
       <p>
         Age: <span class="highlight">{{ myAccount.age }} </span>
       </p>
       <p>
         Address: <span class="highlight"> {{ myAccount.address.street }}</span>
       </p>
-      <p>Phone Number: <span class="highlight"> (312) 135-4532</span></p>
-      <br /><br />
-      <h6>{{ date }}</h6>
-    </div> -->
-    <div>{{ display }}</div>
+      <p>
+        <span
+          >{{ myAccount.address.city }}, {{ myAccount.address.state }}
+          {{ myAccount.address.zip }}
+        </span>
+      </p>
 
-    <!-- Display: if inquiring about transactions -->
-    <!-- <h3>Last 3 Transactions</h3> -->
+      <br /><br />
+    </div>
+    <div *ngIf="transactionCompleted">
+      <h2>Recent Transactions</h2>
+      <p *ngFor="let transaction of myAccount.transactions | slice: 0:3">
+        {{ transaction.date }}
+        {{ transaction.type | uppercase }}
+        {{ transaction.amount | currency }}
+      </p>
+    </div>
   </section>
+
   <aside class="options">
-    <section class="balance">
-      <!-- Display customer balance -->
-    </section>
+    <section class="balance"></section>
     <!-- Add functionality to the buttons below -->
     <ul class="options-list">
+      <li>
+        <h3 id="balance">
+          CURRENT BALANCE:
+          <span class="accent">
+            {{ myAccount.balance | currency: "USD" }}
+          </span>
+        </h3>
+      </li>
       <li class="options-item">
         <input
           type="number"

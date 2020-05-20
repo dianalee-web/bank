@@ -11,11 +11,15 @@ export class TellerComponent {
   value;
   date = new Date();
   display = "";
+  homescreen: boolean = true;
+  transactionCompleted: boolean;
   constructor(public bankService: BankService) {}
   customerInfo() {
     this.display = ` Age: ${this.myAccount.age}`;
   }
   withdraw() {
+    this.transactionCompleted = false;
+    this.homescreen = false;
     this.myAccount.balance -= this.value;
 
     this.myAccount.transactions.unshift({
@@ -28,6 +32,8 @@ export class TellerComponent {
     this.value = "";
   }
   deposit() {
+    this.transactionCompleted = false;
+    this.homescreen = false;
     this.myAccount.balance += this.value;
     this.myAccount.transactions.unshift({
       date: new Date(),
@@ -35,10 +41,14 @@ export class TellerComponent {
       amount: this.value,
       currency: "usd",
     });
+    this.display = "Deposit SUCCESS";
 
     this.value = "";
   }
+  //isHidden = false
   displayTransactions() {
     console.log(this.myAccount.transactions);
+    this.display = "";
+    this.transactionCompleted = true;
   }
 }

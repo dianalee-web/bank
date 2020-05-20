@@ -1,11 +1,15 @@
 .navbar {
   display: flex;
   flex-direction: column;
-  height: 25vh;
-  background: #ba1200;
-  color: white;
+  height: 20vh;
 
-  justify-content: space-around;
+  /* background: #ba1200; */
+  /* color: white; */
+  justify-content: space-between;
+  align-items: center;
+}
+body {
+  height: 100vh;
 }
 router-outlet {
 }
