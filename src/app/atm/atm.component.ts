@@ -7,30 +7,39 @@ import { BankService } from "../bank.service";
   styleUrls: ["./atm.component.css"],
 })
 export class AtmComponent {
-  transactionList = false;
   date = new Date();
   userInputValue: number;
-  currentBalance = "";
+  display = "";
   myAccount = this.bankService.account;
 
   constructor(public bankService: BankService) {}
   withdraw() {
     this.myAccount.balance -= this.userInputValue;
-    alert(`WITHDRAW success! New Balance: ${this.myAccount.balance}`);
+    this.myAccount.transactions.unshift({
+      date: new Date(),
+      type: "withdrawal",
+      amount: this.value,
+      currency: "usd",
+    });
     this.userInputValue = "";
+    this.display = `WTIHDRAW SUCCESS! New Balance: $ ${this.myAccount.balance}`;
   }
   deposit() {
     this.myAccount.balance += this.userInputValue;
+    this.myAccount.transactions.unshift({
+      date: new Date(),
+      type: "deposit",
+      amount: this.value,
+      currency: "usd",
+    });
+    this.userInputValue = "";
+    this.display = `DEPOSIT SUCCESS! New Balance: $ ${this.myAccount.balance}`;
 
-    alert(`DEPOSIT success! New Balance: ${this.myAccount.balance}`);
-    this.value = "";
+    this.userInputValue = "";
   }
   getBalance() {
-    alert(this.myAccount.balance);
-    this.currentBalance = this.myAccount.balance;
+    this.display = `CURRENT BALANCE: $ ${this.myAccount.balance}`;
+    this.userInputValue = "";
   }
-  displayTransactions() {
-    this.transactionList = true;
-    this.transactionsList = "hello";
-  }
+  displayTransactions() {}
 }

@@ -8,6 +8,9 @@
 .hidden {
   visibility: hidden;
 }
+.success {
+  color: green;
+}
 
 .display {
   flex-basis: 40%;

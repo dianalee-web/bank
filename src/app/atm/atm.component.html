@@ -3,12 +3,10 @@
     <h3>
       <span class="highlight"> Welcome, {{ myAccount.fname }}</span>
     </h3>
-    <h4>Current Balance: {{ myAccount.balance | currency }}</h4>
-    <!-- Display Feedback information here -->
-    <!-- Current Balance: {{ myAccount.balance}} -->
-    <h4 *ngIf="myAccount.transactionsList == true"></h4>
+    <div>
+      {{ display }}
+    </div>
 
-    <!-- <h4 [class.hidden]="false">{{ myAccount.transactions }}</h4> -->
     <h6>{{ date }}</h6>
   </section>
   <aside class="options">
@@ -21,6 +19,7 @@
           [(ngModel)]="userInputValue"
         />
       </li>
+
       <li class="options-item">
         <button class="btn btn-info" (click)="withdraw()">Widthdrawal</button>
       </li>

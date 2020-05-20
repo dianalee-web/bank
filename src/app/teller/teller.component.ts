@@ -1,28 +1,44 @@
-import { Component } from '@angular/core';
-import { BankService } from '../bank.service';
+import { Component } from "@angular/core";
+import { BankService } from "../bank.service";
 
 @Component({
-  selector: 'app-teller',
-  templateUrl: './teller.component.html',
-  styleUrls: ['./teller.component.css']
+  selector: "app-teller",
+  templateUrl: "./teller.component.html",
+  styleUrls: ["./teller.component.css"],
 })
 export class TellerComponent {
-  myAccount=this.bankService.account;
+  myAccount = this.bankService.account;
   value;
   date = new Date();
-  constructor( public bankService: BankService) { }
-
+  display = "";
+  constructor(public bankService: BankService) {}
+  customerInfo() {
+    this.display = ` Age: ${this.myAccount.age}`;
+  }
   withdraw() {
-    this.myAccount.balance -=this.value;
-    alert(`WITHDRAW success! New Balance: ${this.myAccount.balance}` );
-    this.value = '';
+    this.myAccount.balance -= this.value;
+
+    this.myAccount.transactions.unshift({
+      date: new Date(),
+      type: "withdrawal",
+      amount: this.value,
+      currency: "usd",
+    });
+    this.display = "Withdraw SUCCESS";
+    this.value = "";
   }
   deposit() {
-    this.myAccount.balance +=this.value;
-    alert(`DEPOSIT success! New Balance: ${this.myAccount.balance}` );
-    this.value = '';
+    this.myAccount.balance += this.value;
+    this.myAccount.transactions.unshift({
+      date: new Date(),
+      type: "deposit",
+      amount: this.value,
+      currency: "usd",
+    });
+
+    this.value = "";
   }
-  displayTransactions(){
-    alert('transactions')
-  };
+  displayTransactions() {
+    console.log(this.myAccount.transactions);
+  }
 }

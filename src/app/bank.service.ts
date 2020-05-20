@@ -5,7 +5,7 @@ import { Injectable } from "@angular/core";
 })
 export class BankService {
   userInputValue: number;
-  constructor() {}
+
   account: any = {
     fname: "Jane",
     lname: "Robinson",
@@ -40,7 +40,13 @@ export class BankService {
       },
     ],
   };
-  withdrawAmount() {
-    alert("hello");
+  constructor() {}
+  addTransaction(type, amount) {
+    this.account.transactions.push({
+      date: Date.now(),
+      type: type,
+      amount: amount,
+      currency: "usd",
+    });
   }
 }
