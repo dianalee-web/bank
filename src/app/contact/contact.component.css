@@ -1,6 +1,9 @@
 .container {
-    display:flex; 
-    justify-content: space-around;
-    /* display: flex; */
-    padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  /* display: flex; */
+  padding: 20px;
+}
+button {
+  background: #37beb0;
 }

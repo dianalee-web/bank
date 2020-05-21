@@ -18,6 +18,8 @@ export class ContactComponent implements OnInit {
   ngOnInit() {}
 
   onSubmit() {
-    alert(this.name, this.email, this.phoneNumber, this.message);
+    alert(
+      `Thank you ${this.name} for contacting us! We will reach out to you at ${this.email} or ${this.phoneNumber}! (Message received: ${this.message})`
+    );
   }
 }

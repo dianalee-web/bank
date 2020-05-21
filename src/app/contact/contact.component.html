@@ -1,35 +1,48 @@
 <div class="container">
-
   <div class="box">
-    <h4>Contact Info</h4>
-    <ul>
-      <li>Phone:</li>
-      <li>Fax:</li>
-      <li>
-        Address: <br />
-        1234 Cubbies Dr
-        <br />
-        Chicago, IL 60025
-      </li>
-    </ul>
+    <h4>
+      Contact Info:<br />
+      <br />
+    </h4>
+    <br />
+    <h5>Phone: (858) 590-1312</h5>
+    <h5>Fax: (858) 590-1345</h5>
+    <br />
+    <h5>
+      Address: <br />
+      1234 Cubbies Dr
+      <br />
+      Chicago, IL 60025
+    </h5>
   </div>
   <div class="box">
     <div class="form-group">
-      <label for="name">Name</label>
-      <input [(ngModel)]="name" class="form-control" />
+      <h4>Contact Form:</h4>
+      <!-- <label for="name">Name</label> -->
+      <input [(ngModel)]="name" placeholder="Name" class="form-control" />
     </div>
     <div class="form-group">
-      <label for="email">Email</label>
-      <input [(ngModel)]="email" type="name" class="form-control" />
+      <!-- <label for="email">Email</label> -->
+      <input
+        [(ngModel)]="email"
+        type="name"
+        class="form-control"
+        placeholder="Email"
+      />
     </div>
 
     <div class="form-group">
-      <label for="phone">Phone Number</label>
-      <input [(ngModel)]="phoneNumber" type="phone" class="form-control" />
+      <!-- <label for="phone">Phone Number</label> -->
+      <input
+        [(ngModel)]="phoneNumber"
+        type="phone"
+        placeholder="Phone"
+        class="form-control"
+      />
     </div>
     <div class="form-group">
-      <label for="message" [(ngModel)]="message">Message</label>
-      <input class="form-control" />
+      <!-- <label for="message" [(ngModel)]="message">Message</label> -->
+      <input class="form-control" placeholder="Message" />
     </div>
     <button (click)="onSubmit()" class="btn btn-info">Submit</button>
   </div>
