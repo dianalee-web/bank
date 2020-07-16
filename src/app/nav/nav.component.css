@@ -14,17 +14,21 @@ li {
 
 a {
   text-transform: uppercase;
+
   word-spacing: 5px;
   letter-spacing: 4px;
-  color: white;
+  color: black;
 }
 .navbar-brand {
-  color: white;
+  /* color: white; */
+}
+nav a {
+  /* background-color: #0c6170; */
+  /* color: white; */
 }
 nav {
-  background-color: #0c6170;
+  border-bottom: 1px solid black;
 }
-
 .righteous {
   font-family: "Righteous", cursive;
   color: White;

@@ -1,3 +1,4 @@
+import { BankService } from "./../bank.service";
 import { Component, OnInit, Input } from "@angular/core";
 
 import { BankService } from "../bank.service";
@@ -16,10 +17,4 @@ export class ContactComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
-
-  onSubmit() {
-    alert(
-      `Thank you ${this.name} for contacting us! We will reach out to you at ${this.email} or ${this.phoneNumber}! (Message received: ${this.message})`
-    );
-  }
 }
